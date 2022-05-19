@@ -10,8 +10,8 @@ export default class A {
 
   constructor(number?: number) {
     this.#number = number ?? 0;
-    this.method1 = new Alg1();
-    this.method2 = new Alg2();
+    this.#method1 = new Alg1();
+    this.#method2 = new Alg2();
   }
 
   public m1() {

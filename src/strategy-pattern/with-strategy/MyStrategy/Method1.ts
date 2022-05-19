@@ -1,4 +1,5 @@
 // Superclasse abstrata que emcapsula metodos com algoritmos
 // semelhantes.
-export default class Method2 {
+export default interface Method1 {
+  method(): void;
 }

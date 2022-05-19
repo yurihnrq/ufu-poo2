@@ -1,3 +1,4 @@
+"use strict";
 var __classPrivateFieldSet = (this && this.__classPrivateFieldSet) || function (receiver, state, value, kind, f) {
     if (kind === "m") throw new TypeError("Private method is not writable");
     if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
@@ -10,33 +11,48 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
 var _A_method1, _A_method2, _A_number;
-import Alg1 from './AbstractAlg/Alg/Alg1';
-import Alg2 from './AbstractAlg/Alg/Alg2';
-export default class A {
-    constructor(number) {
+exports.__esModule = true;
+var Alg1_1 = require("./MyStrategy/ConcreteStrategy/Alg1");
+var Alg2_1 = require("./MyStrategy/ConcreteStrategy/Alg2");
+var A = /** @class */ (function () {
+    function A(number) {
         _A_method1.set(this, void 0);
         _A_method2.set(this, void 0);
         _A_number.set(this, void 0);
         __classPrivateFieldSet(this, _A_number, number !== null && number !== void 0 ? number : 0, "f");
-        this.method1 = new Alg1();
-        this.method2 = new Alg2();
+        __classPrivateFieldSet(this, _A_method1, new Alg1_1["default"](), "f");
+        __classPrivateFieldSet(this, _A_method2, new Alg2_1["default"](), "f");
     }
-    m1() {
+    A.prototype.m1 = function () {
         // Agora este método delega a responsabilidade.
         __classPrivateFieldGet(this, _A_method1, "f").method();
-    }
-    m2() {
+    };
+    A.prototype.m2 = function () {
         // Agora este método delega a responsabilidade.
         __classPrivateFieldGet(this, _A_method2, "f").method();
-    }
-    set method1(method) {
-        __classPrivateFieldSet(this, _A_method1, method, "f");
-    }
-    set method2(method) {
-        __classPrivateFieldSet(this, _A_method2, method, "f");
-    }
-    get number() {
-        return __classPrivateFieldGet(this, _A_number, "f");
-    }
-}
+    };
+    Object.defineProperty(A.prototype, "method1", {
+        set: function (method) {
+            __classPrivateFieldSet(this, _A_method1, method, "f");
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(A.prototype, "method2", {
+        set: function (method) {
+            __classPrivateFieldSet(this, _A_method2, method, "f");
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(A.prototype, "number", {
+        get: function () {
+            return __classPrivateFieldGet(this, _A_number, "f");
+        },
+        enumerable: false,
+        configurable: true
+    });
+    return A;
+}());
+exports["default"] = A;
 _A_method1 = new WeakMap(), _A_method2 = new WeakMap(), _A_number = new WeakMap();
