@@ -1,11 +1,8 @@
 import { ICar } from '../interfaces/ICar';
 import { CarDecorator } from './abstracts/CarDecorator';
 
-export class AirConditioningDecorator extends CarDecorator {
+export class AlloyWheelDecorator extends CarDecorator {
   constructor(car: ICar) {
-    if (car instanceof AirConditioningDecorator) {
-      throw new Error('AirConditioningDecorator can not be decorated');
-    }
     super(car);
   }
 
@@ -14,6 +11,6 @@ export class AirConditioningDecorator extends CarDecorator {
   }
 
   public get description(): string {
-    return this.car.description + ' with air conditioning';
+    return this.car.description + ' with alloy wheels';
   }
 }

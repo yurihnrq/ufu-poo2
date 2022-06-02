@@ -1,4 +1,4 @@
-import { ICar } from '../interfaces/ICar';
+import { ICar } from '../../interfaces/ICar';
 
 // Decorador base
 export abstract class CarDecorator implements ICar {

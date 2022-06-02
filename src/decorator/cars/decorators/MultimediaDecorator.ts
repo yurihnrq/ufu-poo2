@@ -1,5 +1,5 @@
 import { ICar } from '../interfaces/ICar';
-import { CarDecorator } from './CarDecorator';
+import { CarDecorator } from './abstracts/CarDecorator';
 
 export class MultimediaDecorator extends CarDecorator {
   constructor(car: ICar) {
